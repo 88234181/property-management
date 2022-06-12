@@ -20,11 +20,6 @@ public class PropertyController {
     @Autowired
     private PropertyService propertyService;
 
-    @GetMapping("/hello")
-    public String sayHello(){
-        return "Hello";
-    }
-
     @PostMapping("/properties")
     public ResponseEntity<PropertyDTO> saveProperty(@RequestBody PropertyDTO propertyDTO) {
         propertyDTO = propertyService.saveProperty(propertyDTO);
