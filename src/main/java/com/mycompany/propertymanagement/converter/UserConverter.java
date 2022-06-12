@@ -2,7 +2,6 @@ package com.mycompany.propertymanagement.converter;
 
 import com.mycompany.propertymanagement.dto.UserDTO;
 import com.mycompany.propertymanagement.entity.UserEntity;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Component;
 
 @Component
