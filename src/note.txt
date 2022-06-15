@@ -1,0 +1,5 @@
+Swagger UI: /swagger-ui/index.html
+H2 URL: http://localhost:8080/h2-console/login.jsp
+MySQL URL: http://localhost/phpmyadmin/index.php
+Actuator doc: https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
+Actuator URL: http://localhost:8080/actuator

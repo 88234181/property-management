@@ -2,8 +2,9 @@ package com.mycompany.propertymanagement.controller;
 
 import com.mycompany.propertymanagement.dto.UserDTO;
 import com.mycompany.propertymanagement.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,13 +21,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("register")
-    public ResponseEntity<UserDTO> register(@Valid @RequestBody UserDTO userDTO) {
+    @Operation(summary = "register", description  = "This method is used for user registration")
+    @PostMapping(path = "/register", consumes = {"application/json"}, produces = {"application/json"})
+    public ResponseEntity<UserDTO> register(@Parameter(
+            name = "userDTO", example = "user information", required = true
+    ) @Valid @RequestBody UserDTO userDTO) {
         userDTO = userService.register(userDTO);
         return new ResponseEntity<>(userDTO, HttpStatus.CREATED);
     }
 
-    @PostMapping("/login")
+    @PostMapping(path = "/login", consumes = {"application/json"}, produces = {"application/json"})
     public ResponseEntity login(@Valid @RequestBody UserDTO userDTO) {
         userDTO = userService.login(userDTO.getOwnerEmail(), userDTO.getPassword());
         return new ResponseEntity<>(userDTO, HttpStatus.OK);
