@@ -3,3 +3,6 @@ H2 URL: http://localhost:8080/h2-console/login.jsp
 MySQL URL: http://localhost/phpmyadmin/index.php
 Actuator doc: https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
 Actuator URL: http://localhost:8080/actuator
+
+for *->One relationship, default FetchType is EAGER - while getting parent data also get child entity data
+for *->Many relationship, default FetchType is LAZY - while getting parent data, do not get child entity data

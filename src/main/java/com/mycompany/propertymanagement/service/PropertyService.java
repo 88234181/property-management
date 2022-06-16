@@ -9,6 +9,8 @@ public interface PropertyService {
 
     List<PropertyDTO>  getAllProperties();
 
+    List<PropertyDTO>  getAllPropertiesForUser(Long userId);
+
     PropertyDTO updateProperty(PropertyDTO propertyDTO, Long id);
 
     PropertyDTO updatePropertyDescription(PropertyDTO propertyDTO, Long propertyId);
@@ -16,4 +18,6 @@ public interface PropertyService {
     PropertyDTO updatePropertyPrice(PropertyDTO propertyDTO, Long propertyId);
 
     void deleteProperty(Long propertyId);
+
+
 }
